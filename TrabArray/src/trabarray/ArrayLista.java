@@ -6,40 +6,40 @@ import java.util.ArrayList;
 
 public class ArrayLista {
 
-    public static void main(String[] args) {
-        //media();
-        
-        
-        //Utilizando o array list, pegar quantos inteiros o usuario quiser digitar no final 
-        //indique qual o menor, qual o maior e qual a media dos inteiros
-        ArrayList<Integer> numbers = new ArrayList<>();
-        String resp = "";
-        
-        while (!resp.equals("x")) {
-            resp = JOptionPane.showInputDialog("Digite um numero inteiro ou x para encerrar: ");
-                if(!resp.equals("x")){
-                    numbers.add(Integer.parseInt(resp));
-                }
-        }
-        
-        Integer menor = numbers.get(0);
-        Integer maior = numbers.get(0);
-        Integer soma = 0;
-        for (Integer n : numbers) {
-            if(n > menor){
-                menor = n;
-            }
-            if(n < maior){
-                maior = n;
-            }
-            soma += n;
-        }
-
-        int media = soma/numbers.size();
-
-
-        JOptionPane.showMessageDialog(null, "O menor numero recebido foi: "+menor+"; o maior foi: "+maior+"; e a media geral foi de: "+media);
-    }
+//        public static void main(String[] args) {
+//            //media();
+//
+//
+//            //Utilizando o array list, pegar quantos inteiros o usuario quiser digitar no final 
+//            //indique qual o menor, qual o maior e qual a media dos inteiros
+//            ArrayList<Integer> numbers = new ArrayList<>();
+//            String resp = "";
+//
+//            while (!resp.equals("x")) {
+//                resp = JOptionPane.showInputDialog("Digite um numero inteiro ou x para encerrar: ");
+//                    if(!resp.equals("x")){
+//                        numbers.add(Integer.parseInt(resp));
+//                    }
+//            }
+//
+//            Integer menor = numbers.get(0);
+//            Integer maior = numbers.get(0);
+//            Integer soma = 0;
+//            for (Integer n : numbers) {
+//                if(n > menor){
+//                    menor = n;
+//                }
+//                if(n < maior){
+//                    maior = n;
+//                }
+//                soma += n;
+//            }
+//
+//            int media = soma/numbers.size();
+//
+//
+//            JOptionPane.showMessageDialog(null, "O menor numero recebido foi: "+menor+"; o maior foi: "+maior+"; e a media geral foi de: "+media);
+//        }
     
     public static void pedirVariasNotas(){
         Double[] nota = new Double[1];
