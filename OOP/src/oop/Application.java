@@ -115,7 +115,7 @@ public class Application {
 
     private void withdraw() {
         int accountNumber = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o numero da sua conta: "));
-        String ownerAccount = JOptionPane.showInputDialog(null, "Digite o numero da sua conta: ");
+        String ownerAccount = JOptionPane.showInputDialog(null, "Digite o nome do titular da conta: ");
         
         Account acc = null;
         
@@ -141,7 +141,27 @@ public class Application {
     }
 
     private void lookAccount() {
+        int accountNumber = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o numero da sua conta: "));
+        String ownerAccount = JOptionPane.showInputDialog(null, "Digite o nome do titular da conta: ");
         
+        Account acc = null;
+        
+        for (int i = 0; i < listAccount.size(); i++) {            
+            if(listAccount.get(i).getAccountNumber().equals(accountNumber) && listAccount.get(i).getOwnerName().equals(ownerAccount)){
+                acc = listAccount.get(i);
+            }            
+        }
+        
+        if(acc != null){
+            String nmOwner = acc.getOwnerName();
+            Integer numberAcc = acc.getAccountNumber();
+            Double balance = acc.getAccountBalance();
+            
+            JOptionPane.showMessageDialog(null, "O titular da conta é "+nmOwner+", o numero da sua conta é "+numberAcc+" e o saldo total é R$"+balance);
+            
+        }else{
+            showMessage("Erro: Conta não encontrada! Operação cancelada");
+        }
     }
 
     private void createNewAccount() {
